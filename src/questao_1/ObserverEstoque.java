@@ -1,5 +1,5 @@
 package questao1;
 
-public interface Observer {
+public interface ObserverEstoque {
     void atualizar(String nomeProduto, int quantidade);
 }

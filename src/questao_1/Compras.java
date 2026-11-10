@@ -1,6 +1,6 @@
 package questao1;
 
-public class Compras implements ObservadorEstoque {
+public class Compras implements ObserverEstoque {
 
     @Override
     public void atualizar(String nomeProduto, int quantidade) {

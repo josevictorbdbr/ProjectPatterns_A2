@@ -1,3 +1,4 @@
+
 package questao1;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ public class Produto {
     private String nome;
     private int quantidade;
     private boolean zerado;
-    private List<observersToque> observers;
+    private List<ObserverEstoque> observers;
 
     public Produto(String nome, int quantidade) {
         this.nome = nome;
@@ -17,30 +18,34 @@ public class Produto {
         this.observers = new ArrayList<>();
     }
 
-    public void adicionarObserver(observersToque observer) {
+    public void adicionarObserver(ObserverEstoque observer) {
         observers.add(observer);
     }
-    public void removerObserver(observersToque observer) {
+
+    public void removerObserver(ObserverEstoque observer) {
         observers.remove(observer);
     }
 
     public void alterarQuantidade(int novaQuantidade) {
+
         if (novaQuantidade < 0) {
-            throw new IllegalArgumentException("Quantidade nao pode ser negativa.");
+            throw new IllegalArgumentException(
+                "Quantidade nao pode ser negativa."
+            );
         }
+
         if (this.quantidade == novaQuantidade) {
             return;
         }
 
         this.quantidade = novaQuantidade;
+        this.zerado = novaQuantidade == 0;
 
         notificarObservers();
-
-        zerado = novaQuantidade == 0;
     }
 
     private void notificarObservers() {
-        for (observersToque observer : observers) {
+        for (ObserverEstoque observer : observers) {
             observer.atualizar(nome, quantidade);
         }
     }
@@ -48,9 +53,11 @@ public class Produto {
     public String getNome() {
         return nome;
     }
+
     public int getQuantidade() {
         return quantidade;
     }
+
     public boolean zerado() {
         return zerado;
     }

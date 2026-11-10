@@ -1,6 +1,6 @@
 package questao1;
 
-public class Auditoria implements ObservadorEstoque {
+public class Auditoria implements ObserverEstoque {
 
     @Override
     public void atualizar(String nomeProduto, int quantidade) {

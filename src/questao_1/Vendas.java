@@ -1,6 +1,6 @@
 package questao1;
 
-public class Vendas implements Observer {
+public class Vendas implements ObserverEstoque {
     private boolean zerado;
 
     @Override

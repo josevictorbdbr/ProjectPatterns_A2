@@ -10,11 +10,11 @@ public class Main {
         Vendas vendas = new Vendas();
         Auditoria auditoria = new Auditoria();
 
-        produto.adicionarObservador(compras);
-        produto.adicionarObservador(vendas);
-        produto.adicionarObservador(auditoria);
+        produto.adicionarObserver(compras);
+        produto.adicionarObserver(vendas);
+        produto.adicionarObserver(auditoria);
 
-        System.out.println("------MONITORAMENTO DE ESTOQUE-----");
+        System.out.println("------MONITORAMENTE ESTOQUE-----");
 
         produto.alterarQuantidade(4);
         System.out.println();
@@ -28,8 +28,8 @@ public class Main {
         produto.alterarQuantidade(8);
         System.out.println();
 
-        produto.removerObservador(compras);
-        System.out.println("-----COMPRAS REMOVIDO-----");
+        produto.removerObserver(compras);
+        System.out.println("compras removido");
 
         produto.alterarQuantidade(3);
         System.out.println();
